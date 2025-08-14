@@ -1,0 +1,19 @@
+{
+    "app_name": "Indian Credit Card Analyzer",
+    "version": "1.0.0",
+    "description": "Comprehensive credit card statement analyzer for Indian banks",
+    "supported_banks": [
+        "SBI Cards",
+        "HDFC Bank", 
+        "Axis Bank",
+        "Standard Chartered",
+        "ICICI Bank"
+    ],
+    "features": {
+        "gmail_integration": true,
+        "auto_categorization": true,
+        "dashboard": true,
+        "analytics": true,
+        "pdf_parsing": true
+    }
+}

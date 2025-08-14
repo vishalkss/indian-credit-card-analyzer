@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  credit-card-analyzer:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+      - ./downloads:/app/downloads
+      - ./logs:/app/logs
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=sqlite:///data/credit_cards.db
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  data:
+  logs:
+  downloads:
